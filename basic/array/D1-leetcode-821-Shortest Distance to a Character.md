@@ -15,6 +15,10 @@ Output: [3, 2, 1, 0, 1, 0, 0, 1, 2, 2, 1, 0]
 2. `C` is a single character, and guaranteed to be in string `S`.
 3. All letters in `S` and `C` are lowercase.
 
+**Labels:**
+- 数组 Array
+- 简单 Easy
+
 **思路:**
 
 查找string S里的每个字符离给定字符C的index的最短距离，对于每个字符有以下三种情况：

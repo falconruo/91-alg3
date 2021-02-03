@@ -41,7 +41,7 @@ customStack.pop();                            // return -1 --> Stack is empty re
 
 **Labels:**
 - 数组Array/堆栈Stack
-- 中等
+- 中等 Medium
 
 **思路:**
 1. 使用一个数组vector来模拟栈, 使用一个变量size表示栈的容量maxSize

@@ -40,6 +40,9 @@ Explanation: 9999999999 + 1 = 10000000000
 3. `0 <= K <= 10000`
 4. If `A.length > 1`, then `A[0] != 0`
 
+**Labels:**
+- 数组 Array
+- 简单 Easy
 
 **思路:**
 
