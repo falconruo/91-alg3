@@ -77,15 +77,14 @@ public:
     
     /** Push element x to the back of queue. */
     void push(int x) {
-        while (!s2.empty()) {
-            s1.push(s2.top());
-            s2.pop();
-        }
         s1.push(x);
     }
     
     /** Removes the element from in front of queue and returns that element. */
     int pop() {
+        if (empty())
+            return -1;
+        
         int res = peek();
         s2.pop();
         return res;
@@ -96,9 +95,11 @@ public:
         if (empty())
             return -1;
 
-        while (!s1.empty()) {
-            s2.push(s1.top());
-            s1.pop();
+        if (s2.empty()) {
+            while (!s1.empty()) {
+                s2.push(s1.top());
+                s1.pop();
+            }
         }
 
         return s2.top();
