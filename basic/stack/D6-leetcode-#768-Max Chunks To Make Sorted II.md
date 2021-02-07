@@ -81,6 +81,7 @@ public:
 
         int chunks = 0;
 
+        // 0 <= arr[i] <= 10^8 (100000000), 1 <= arr.length <= 2000, 0 <= sum <= 2 * 10^11 (12 bits), sum > INT_MAX (21474836473, 11 bit), so use long int type to avoid the overflow
         long sum = 0, sorted_sum = 0;
         for (int i = 0; i < arr.size(); ++i) { // O(n)
             sum += arr[i];
@@ -106,7 +107,7 @@ public:
             else {
                 int max_val = s.top();
 
-                while (!s.empty() && s.top() > arr[i])
+                while (!s.empty() && s.top() > arr[i]) // here is a while the worst case is O(n) here, but overall worst case is O(k * n), average is O(n)
                     s.pop();
                 s.push(max_val);
             }
