@@ -27,7 +27,7 @@ Output: [6,9,12]
 ```
 
 **Constraints:**:
-- `1 <= s.length <= 104`
+- `1 <= s.length <= 10^4`
 - `s` consists of lower-case English letters.
 - `1 <= words.length <= 5000`
 - `1 <= words[i].length <= 30`
