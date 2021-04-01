@@ -74,6 +74,7 @@ Output: 0
 class Solution {
 public:
     int minSubarray(vector<int>& nums, int p) {
+        // To avoid integer overflow (32-bit) using long long
         long long mod = 0, sum = 0;
         for(int i = 0; i < nums.size(); i++)
         {
