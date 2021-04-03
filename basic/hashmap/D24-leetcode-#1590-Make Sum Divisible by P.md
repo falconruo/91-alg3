@@ -22,7 +22,6 @@ Output: 2
 Explanation: We cannot remove a single element to get a sum divisible by 9. The best way is to remove the subarray [5,2], leaving us with [6,3] with sum 9.
 ```
 
-
 **Example 3:**
 ```
 Input: nums = [1,2,3], p = 3
