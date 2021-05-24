@@ -52,6 +52,10 @@ Note: You may assume the tree (i.e., the given root node) is not **NULL**.
     - 令leftmost等于队列头节点的值，因为按层序遍历,每次的队头肯定是当前层的最左边节点
     - 取当前队列size(树的当前层的节点数), 循环将同一层每一个节点依次出队,并且把不为空的子节点插入入队尾
 
+反向BFS法:
+传统BFS是按照层次遍历，先左后右，利用辅助队列。
+本题求最深层的最左叶子节点(最左下角的节点)，可以反向操作，层次遍历时按照先右后左，这样队列的最后一个节点必是最左下角的叶子节点，实现时先将下一层的右子节点入队，后将下一层的左子节点入队即可。
+
 **复杂度分析:**
 1. 时间复杂度: O(n), n为树的节点数
 2. 空间复杂度: DFS -> O(logn), 树的深度; BFS -> O(k), k为最宽一层的节点数
@@ -134,6 +138,33 @@ public:
             }
         }
         return res;
+    }
+};
+
+/**
+ * reversed BFS + Iterative
+ */
+class Solution {
+public:
+    int findBottomLeftValue(TreeNode* root) {
+        queue<TreeNode*> qt;
+        qt.push(root);
+
+        // reversed BFS (firstly push right sub-tree into queue, then left sub-tree, the last node is the most left node of last row)
+        TreeNode* node = root;
+
+        while (!qt.empty()) {
+            node = qt.front();
+            qt.pop();
+
+            if (node->right)
+                qt.push(node->right);
+
+            if (node->left)
+                qt.push(node->left);
+        }
+
+        return node->val;
     }
 };
 ```
